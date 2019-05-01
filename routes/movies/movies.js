@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Joi = require('Joi')
-const connection = require('../config/database')
+const connection = require('../../config/database')
 
 router.get('/', (req, res) => {
     getAllMovies((moviesList) => {
