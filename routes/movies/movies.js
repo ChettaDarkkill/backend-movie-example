@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 })
 
 function getAllMovies(callback) {
-    connection.query('SELECT * from movies', function (err, rows, fields) {
+    connection.query('SELECT * from movies',  (err, rows, fields)  => {
         if (err) throw err;
         callback(rows)
     })
