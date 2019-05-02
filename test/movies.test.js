@@ -12,12 +12,3 @@ test('the movies must be empty', () => {
   connection.end()
 });
 
-// test('the movies must be one when call api get movies by id', () => {
-//   connection.connect()
-//     function callback(data) {
-//       expect(data.length).toBe(1)
-//     }
-//     handlers.getMovieByid(1, callback)
-//   connection.end()
-
-// })
