@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const check = require('./middleware/jwt')
 
 const movies = require('./routes/movies/movies')
 const users = require('./routes/users/users')
@@ -7,7 +8,8 @@ const users = require('./routes/users/users')
 app.use(express.json())
 app.use(express.urlencoded( { extended: true } ))
 
-app.use('/api/movies', movies)
+
+app.use('/api/movies', check.checkToken, movies)
 app.use('/api/users', users)
 
 const port = process.env.port || 5000
